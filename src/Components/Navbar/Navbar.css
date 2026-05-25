@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #0f0f0f;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+}
+
+/* ================= LEFT ================= */
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 180px;
+}
+
+.menu-icon {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-icon:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  width: 120px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* ================= SEARCH ================= */
+
+.search-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  flex: 1;
+  height: 45px;
+  border: 1px solid #d3d3d3;
+  border-radius: 50px 0 0 50px;
+  outline: none;
+  padding: 0 18px;
+  font-size: 16px;
+  background-color: white;
+  margin-left: 25px;
+}
+
+.search-box input:focus {
+  border-color: #1c62d1;
+}
+
+.search-btn {
+  width: 65px;
+  height: 45px;
+  border: 1px solid #d3d3d3;
+  border-left: none;
+  border-radius: 0 50px 50px 0;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #ececec;
+}
+
+.mic-btn {
+  min-width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 18px;
+}
+
+.mic-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* ================= RIGHT ================= */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 170px;
+  justify-content: flex-end;
+}
+
+.dots {
+  cursor: pointer;
+}
+
+.signin-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: 1px solid #3ea6ff;
+  background-color: white;
+  color: #3ea6ff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signin-btn:hover {
+  background-color: #e8f4ff;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+  .search-container {
+    padding: 0 10px;
+  }
+
+  .search-box {
+    max-width: 500px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .nav-left {
+    min-width: auto;
+    gap: 10px;
+  }
+
+  .nav-right {
+    min-width: auto;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .search-container {
+    padding: 0;
+  }
+
+  .search-box {
+    gap: 8px;
+  }
+
+  .search-box input {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .search-btn {
+    width: 55px;
+    height: 40px;
+  }
+
+  .mic-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 500px) {
+
+  .navbar {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  /* LEFT */
+
+  .nav-left {
+    gap: 10px;
+    min-width: auto;
+  }
+
+  .logo {
+    width: 85px;
+  }
+
+  .menu-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* SEARCH */
+
+  .search-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .search-box {
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ONLY HIDE INPUT */
+
+  .search-box input {
+    display: none;
+  }
+
+  /* SHOW SEARCH ICON */
+
+  .search-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-btn:hover {
+    background-color: #f2f2f2;
+  }
+
+  /* HIDE MIC */
+
+  .mic-btn {
+    display: none;
+  }
+
+  /* RIGHT */
+
+  .nav-right {
+    min-width: auto;
+    gap: 10px;
+  }
+
+  /* KEEP SIGNIN BUTTON */
+
+  .signin-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  
+}

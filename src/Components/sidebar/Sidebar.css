@@ -1,0 +1,106 @@
+
+.sidebar {
+    width: 240px;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    padding: 15px 12px;
+    position: sticky;
+    top: 70px;
+    left: 0;
+    background: #ffffff;
+    border-right: 1px solid #e5e5e5;
+    transition: 0.3s ease;
+}
+
+/* Links */
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 12px;
+    color: #0f0f0f;
+    text-decoration: none;
+    border-radius: 12px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #f2f2f2;
+}
+
+/* Text */
+
+.sidebar h3 {
+    margin: 18px 12px 10px;
+    font-size: 16px;
+    color: #0f0f0f;
+}
+
+.sidebar h4 {
+    font-size: 14px;
+    color: #606060;
+    line-height: 1.5;
+    margin: 15px 12px;
+    font-weight: 400;
+}
+
+/* Divider */
+
+.sidebar hr {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 15px 0;
+}
+
+/* Sign In Button */
+
+.signin-side-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 12px;
+    padding: 10px 16px;
+    border-radius: 50px;
+    border: 1px solid #3ea6ff;
+    background: white;
+    color: #3ea6ff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.signin-side-btn:hover {
+    background: #e8f4ff;
+}
+
+/* Scrollbar */
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        z-index: 999;
+    }
+
+    .show-sidebar {
+        left: 0;
+    }
+}
