@@ -1,18 +1,19 @@
-
 .sidebar {
     width: 240px;
     height: calc(100vh - 70px);
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 15px 12px;
-    position: sticky;
+    position: fixed;
     top: 70px;
     left: 0;
     background: #ffffff;
     border-right: 1px solid #e5e5e5;
     transition: 0.3s ease;
+    z-index: 999;
 }
 
-/* Links */
+/* ================= LINKS ================= */
 
 .sidebar a {
     display: flex;
@@ -32,7 +33,7 @@
     background: #f2f2f2;
 }
 
-/* Text */
+/* ================= TEXT ================= */
 
 .sidebar h3 {
     margin: 18px 12px 10px;
@@ -48,7 +49,7 @@
     font-weight: 400;
 }
 
-/* Divider */
+/* ================= DIVIDER ================= */
 
 .sidebar hr {
     border: none;
@@ -56,7 +57,7 @@
     margin: 15px 0;
 }
 
-/* Sign In Button */
+/* ================= SIGN IN BUTTON ================= */
 
 .signin-side-btn {
     display: flex;
@@ -78,7 +79,7 @@
     background: #e8f4ff;
 }
 
-/* Scrollbar */
+/* ================= SCROLLBAR ================= */
 
 .sidebar::-webkit-scrollbar {
     width: 6px;
@@ -94,13 +95,27 @@
 @media (max-width: 768px) {
 
     .sidebar {
-        position: fixed;
-        top: 70px;
         left: -100%;
-        z-index: 999;
+        top: 70px;
     }
 
     .show-sidebar {
         left: 0;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 500px) {
+
+    .sidebar {
+        width: 220px;
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+
+    .sidebar a {
+        font-size: 14px;
+        gap: 14px;
     }
 }

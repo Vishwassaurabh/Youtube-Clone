@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import Navbar from "./Components/Navbar/Navbar";
-import Sidebar from "./Components/sidebar/Sidebar";
+import React from "react";
+import Home from "./Pages/Home";
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 const App = () => {
-  const [sidebar, setSidebar] = useState(false);
   return (
-    <>
-      <Navbar sidebar={sidebar} setSidebar={setSidebar} />
-      <Sidebar sidebar={sidebar} />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
