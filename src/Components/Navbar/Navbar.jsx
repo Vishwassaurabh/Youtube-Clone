@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { EllipsisVertical, Menu, Mic, Search, UserCircle2 } from "lucide-react";
-import "./Navbar.css"
+import "./Navbar.css";
 
-const Navbar = ({ sidebar, setSidebar }) => {
+const Navbar = ({ sidebar, setSidebar,fetchVideos }) => {
   const [Query, setQuery] = useState("");
+
   return (
     <div className="nav-container">
       <nav className="navbar">
         <div className="nav-left">
           <Menu className="menu-icon" onClick={() => setSidebar(!sidebar)} />
 
-          <img className="logo"
+          <img
+            className="logo"
             src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
             alt="youtube"
           />
@@ -25,16 +27,15 @@ const Navbar = ({ sidebar, setSidebar }) => {
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && searchVideos()}
             />
-            <button className="search-btn" >
+            <button className="search-btn"  onClick={() => fetchVideos(Query)}>
               <Search size={20} />
             </button>
 
             <button className="mic-btn">
-                <Mic size={20}/>
+              <Mic size={20} />
             </button>
           </div>
         </div>
-
 
         <div className="nav-right">
           <EllipsisVertical className="dots" />
